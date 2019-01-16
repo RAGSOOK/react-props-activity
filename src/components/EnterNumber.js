@@ -5,7 +5,6 @@ class EnterNumber extends Component{
         super(props);
         this.state = {
             number: undefined,
-            direction: '',
         };
     }
 
@@ -16,22 +15,14 @@ class EnterNumber extends Component{
     }
 
     handleDown = () => {
-        this.setState({
-            direction: 'down',
-        });
-        this.props.performOperation( this.state.number, this.state.direction);
+        this.props.performOperation( this.state.number, 'down');
     }
 
     handleUp = () => {
-        this.setState({
-            direction: 'up',
-        });
-        this.props.performOperation( this.state.number, this.state.direction);
+        this.props.performOperation( this.state.number, 'up');
     }
 
     render(){
-        console.log(this.state.number);
-        console.log(this.state.direction);
         return(
             <div>
                 <button onClick={this.handleUp}>Up</button>

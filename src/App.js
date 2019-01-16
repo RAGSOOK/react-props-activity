@@ -17,12 +17,12 @@ class App extends Component {
   performOperation = (number, direction) => {
     if(direction == 'up'){
       this.setState({
-        total: this.state.total += number,
+        total: this.state.total += parseInt(number),
       });
     }
     else if(direction == 'down'){
       this.setState({
-        total: this.state.total -= number,
+        total: this.state.total -= parseInt(number),
     });
     }
     else{
