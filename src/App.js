@@ -10,12 +10,24 @@ class App extends Component {
     super();
     this.state = {
       history: [],
-      operation: [],
+      total: 0,
     }
   }
 
   performOperation = (number, direction) => {
-
+    if(direction == 'up'){
+      this.setState({
+        total: this.state.total += number,
+      });
+    }
+    else if(direction == 'down'){
+      this.setState({
+        total: this.state.total -= number,
+    });
+    }
+    else{
+      alert('There was a problem in App.js method performOperation');
+    }
   }
 
 
@@ -25,9 +37,9 @@ class App extends Component {
         <header className="App-header">
           <Header />
         </header>
-        <EnterNumber />
+        <EnterNumber performOperation={this.performOperation}/>
         <br />
-        <CurrentTotal />
+        <CurrentTotal total={this.state.total}/>
       </div>
     );
   }

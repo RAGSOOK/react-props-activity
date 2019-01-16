@@ -19,12 +19,14 @@ class EnterNumber extends Component{
         this.setState({
             direction: 'down',
         });
+        this.props.performOperation( this.state.number, this.state.direction);
     }
 
     handleUp = () => {
         this.setState({
             direction: 'up',
         });
+        this.props.performOperation( this.state.number, this.state.direction);
     }
 
     render(){

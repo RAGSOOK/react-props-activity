@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 
 class CurrentTotal extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            total: 0,
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         total: 0,
+    //     };
+    // }
 
     render(){
+        const total = this.props.total;
         return(
             <div>
-                <h1>{this.state.total}</h1>
+                <h1>{total}</h1>
                 <button>Save</button>
             </div>
         )
